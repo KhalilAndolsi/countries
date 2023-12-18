@@ -8,7 +8,7 @@ function App() {
   const getData = async () => {
     await fetch("https://restcountries.com/v3.1/all")
       .then((res) => res.json())
-      .then((data) => setData(data))
+      .then((data) => setData(data.filter(d => d.name.common != "Israel")))
       .catch((err) => console.log(err));
   };
   useEffect(() => {
