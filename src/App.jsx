@@ -12,7 +12,7 @@ function App() {
       .catch((err) => console.log(err));
   };
   useEffect(() => {
-    getData()
+    getData();
   }, []);
 
   const searchCountrie = (event) => {
@@ -35,16 +35,13 @@ function App() {
         countries
       </h1>
       <div className="flex flex-col items-center gap-5">
-        {
-          data.length > 0 &&
-          <input
-            type="text"
-            placeholder="Search"
-            className="w-[80%] md:w-[40%] p-2 text-zinc-900 rounded-md outline-none border-0 font-medium"
-            onChange={(e) => searchCountrie(e.target.value)}
-          />
-        }
-                {data.length > 0 && (
+        <input
+          type="text"
+          placeholder="Search"
+          className="w-[80%] md:w-[40%] p-2 text-zinc-900 rounded-md outline-none border-0 font-medium"
+          onChange={(e) => searchCountrie(e.target.value)}
+        />
+        {data.length > 0 && (
           <div className="flex gap-2 flex-wrap px-2 justify-center">
             <button
               className="buttonPagination"
@@ -83,7 +80,11 @@ function App() {
                     key={i}
                     className="card p-2 border-2 border-white rounded-md overflow-hidden"
                   >
-                    <h4 className="p-2 underline"><a href={d.maps.googleMaps} target="_blanck">{d.name.common}</a></h4>
+                    <h4 className="p-2 underline">
+                      <a href={d.maps.googleMaps} target="_blanck">
+                        {d.name.common}
+                      </a>
+                    </h4>
                     <img
                       src={d.flags.svg}
                       alt={d.name.official}
@@ -115,7 +116,17 @@ function App() {
           </div>
         )}
       </div>
-      <h3 className="text-center my-5">this app created by <a href="https://github.com/KhalilAndolsi" target="_blanck" className="underline">khalil andolsi</a> with mush ❤️</h3>
+      <h3 className="text-center my-5">
+        this app created by{" "}
+        <a
+          href="https://github.com/KhalilAndolsi"
+          target="_blanck"
+          className="underline"
+        >
+          khalil andolsi
+        </a>{" "}
+        with mush ❤️
+      </h3>
     </>
   );
 }
