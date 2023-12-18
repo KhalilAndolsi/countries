@@ -1,0 +1,13 @@
+html {
+  @apply text-white bg-zinc-900
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px , 1fr));
+  gap: 15px;
+}
+
+.buttonPagination {
+  @apply border-2 p-2 border-white rounded-md 
+}
