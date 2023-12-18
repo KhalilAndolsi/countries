@@ -29,6 +29,9 @@ function App() {
       }
     }
   };
+  useEffect(() => {
+    window.scrollTo({ top: 1000, behavior: "smooth" })
+  }, [page])
   return (
     <>
       <h1 className="p-5 font-bold text-3xl text-center uppercase">
